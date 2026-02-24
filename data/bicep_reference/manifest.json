@@ -1,0 +1,10 @@
+{
+  "description": "회사 정책 준수 참조 Bicep 템플릿. 보안성 검토 시 사용자 설계와 비교 기준으로 사용.",
+  "templates": [
+    {
+      "path": "compliant_storage_network.bicep",
+      "policy_categories": ["CAT-001", "CAT-002", "CAT-003", "CAT-005"],
+      "description": "스토리지·네트워크 정책 준수 예시 (HTTPS, TLS 1.2, NSG 제한, 암호화)"
+    }
+  ]
+}

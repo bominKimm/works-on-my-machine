@@ -1,0 +1,24 @@
+# 6. 개발 설계 보안성 검토
+
+문서: 설계 보안성 검토 - Private Endpoint·WAF
+용도: Bicep/인프라 설계 검토 시 RAG 참조
+
+## Private Endpoint·Private Link
+
+### PaaS 리소스 네트워크 제한
+
+SQL, Storage, Key Vault, Web App 등 공용 엔드포인트만 노출하는 구성은 사내 보안 등급에 따라 Private Endpoint 사용을 요구할 수 있다. 민감 데이터를 다루는 서비스는 퍼블릭 네트워크 차단(publicNetworkAccess: Disabled) 및 Private Endpoint 연결을 설계에 포함한다.
+
+### DNS 및 VNet 통합
+
+Private Endpoint 사용 시 해당 Private DNS Zone을 VNet에 링크하고, 공용 DNS로 해당 리소스가 조회되지 않도록 한다. 설계도에 Private Endpoint는 있으나 DNS 설정이 누락된 경우 검토 시 보완 요청한다.
+
+## WAF·DDoS 방어
+
+### 웹 계층 보호
+
+인터넷에 노출되는 웹앱·API는 Application Gateway 또는 Front Door에 WAF를 연동하고, OWASP 코어 규칙셋을 활성화하는 구성을 권장한다. 사내 외부 노출 서비스는 WAF 예외 승인 없이 적용이 원칙이다.
+
+### DDoS Protection
+
+중요 서비스는 Azure DDoS Protection Standard 적용을 검토한다. 설계 검토 시 트래픽 규모·중요도에 따라 DDoS 표준 도입 여부를 안내한다.

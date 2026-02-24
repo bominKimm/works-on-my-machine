@@ -1,0 +1,44 @@
+[
+  {
+    "category_id": "CAT-001",
+    "category_name": "1. 정보보호 정책",
+    "description": "전사 정보보호 및 개발보안 관련 기본 정책과 매뉴얼",
+    "created_at": "2024-01-01T00:00:00Z",
+    "design_review_keywords": ["KeyVault", "vaults", "Microsoft.KeyVault", "암호화", "접근 통제", "RBAC"]
+  },
+  {
+    "category_id": "CAT-002",
+    "category_name": "2. 서비스구축 개발보안",
+    "description": "애플리케이션 개발 공통 설계 기준, 코딩 규칙, 배포 보안",
+    "created_at": "2024-01-01T00:00:00Z",
+    "design_review_keywords": ["Microsoft.Storage", "storageAccounts", "Microsoft.Web", "sites", "serverfarms", "Microsoft.Sql", "Microsoft.Compute", "virtualMachines", "API", "설계 기준"]
+  },
+  {
+    "category_id": "CAT-003",
+    "category_name": "3. 하이브리드 클라우드 및 네트워크",
+    "description": "DMZ 구성, 단일 회선 금지, 온프레미스-클라우드 연동 보안",
+    "created_at": "2024-01-01T00:00:00Z",
+    "design_review_keywords": ["Microsoft.Network", "networkSecurityGroups", "virtualNetworks", "vnet", "subnets", "NSG", "방화벽"]
+  },
+  {
+    "category_id": "CAT-004",
+    "category_name": "4. 개발환경 및 빌드 보안",
+    "description": "Dev/Staging 환경 IP·Proxy 관리, 상용망 접근 제한",
+    "created_at": "2024-01-01T00:00:00Z",
+    "design_review_keywords": ["environment", "dev", "staging", "prod", "deployment", "파이프라인"]
+  },
+  {
+    "category_id": "CAT-005",
+    "category_name": "5. 운영 및 데이터 보안",
+    "description": "민감 데이터 반출, K-익명성, 합성 데이터 변환, 로그 보관",
+    "created_at": "2024-01-01T00:00:00Z",
+    "design_review_keywords": ["Microsoft.Storage", "storageAccounts", "Microsoft.Sql", "databases", "로그", "diagnostic", "백업"]
+  },
+  {
+    "category_id": "CAT-006",
+    "category_name": "6. 개발 설계 보안성 검토",
+    "description": "개발자가 제출한 인프라·아키텍처 설계(Bicep 등)가 사내 보안 아키텍처 및 보안 정책에 위배되는지 검토하기 위한 기준. 네트워크, 스토리지, 웹앱, DB, Key Vault, VM, API·서버 접근 등 리소스별 필수·금지 사항",
+    "created_at": "2024-01-01T00:00:00Z",
+    "design_review_keywords": []
+  }
+]
