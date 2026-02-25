@@ -131,7 +131,7 @@ pytest tests/ -v
 pytest tests/test_api.py -v
 
 # 커버리지 리포트
-pytest tests/ --cov=api --cov=agents --cov=mock_services --cov-report=html
+pytest tests/ --cov=api --cov=agents --cov=api/common/mock_services --cov-report=html
 ```
 
 ---
@@ -146,7 +146,7 @@ ruff check .
 ruff format .
 
 # 타입 체크
-mypy api/ agents/ mock_services/
+mypy api/ agents/ api/common/mock_services/
 ```
 
 ---

@@ -80,7 +80,7 @@ Frontend에서 `/analyze` API 호출 후 응답을 받았지만 결과가 렌더
 - `ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg"}` (bicep 누락)
 
 ### 2. File Processor 미지원
-- `mock_services/file_processor.py`가 `.bicep` 파일 처리 로직 없음
+- `api/common/mock_services/file_processor.py`가 `.bicep` 파일 처리 로직 없음
 - Bicep 파일 업로드 시 에러 발생
 
 ### 3. Agent 프롬프트 f-string 충돌
@@ -103,7 +103,7 @@ Frontend에서 `/analyze` API 호출 후 응답을 받았지만 결과가 렌더
 ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".bicep"}  # Bicep 추가
 ```
 
-### 2. Bicep 파일 처리 로직 추가 (`mock_services/file_processor.py`)
+### 2. Bicep 파일 처리 로직 추가 (`api/common/mock_services/file_processor.py`)
 ```python
 allowed_extensions = {".pdf", ".png", ".jpg", ".jpeg", ".bicep"}
 
@@ -165,7 +165,7 @@ if isinstance(prerequisites, list):
 
 ## 수정된 파일
 1. `api/routers/analyze.py` - Bicep 파일 형식 허용
-2. `mock_services/file_processor.py` - Bicep 파일 처리 로직
+2. `api/common/mock_services/file_processor.py` - Bicep 파일 처리 로직
 3. `agents/new_agent_with_tools.py` - f-string 충돌 수정
 4. `agents/new_agent_wrapper_v2.py` - AgentResponse 처리 + prerequisites 변환
 
