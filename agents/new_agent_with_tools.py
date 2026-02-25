@@ -465,6 +465,43 @@ nc -w 3 localhost <port>
 Docker inspection:
 docker inspect <container>
 
+Conditional lightweight authentication testing (ONLY if service is confirmed):
+
+Hydra (limit attempts strictly):
+hydra -l <user> -p <password> -f -t 4 -W 3 <protocol>://localhost:<port>
+
+SQL injection probe (lightweight only):
+sqlmap -u "http://localhost:<port>/<endpoint>" --batch --level=1 --risk=1 --timeout=5 --crawl=0 --technique=BEUST --time-sec=3
+
+STRICT CONDITIONS:
+
+- hydra MAY be used ONLY if:
+  - A login service is confirmed
+  - Credentials are found in environment variables
+  - The service appears to allow unauthenticated login attempts
+  - Maximum 5 total attempts
+  - No wordlists
+  - No brute-force mode
+
+- sqlmap MAY be used ONLY if:
+  - An HTTP service is confirmed
+  - Query parameters are present
+  - Potential injection indicators observed
+  - Must use --level=1 and --risk=1
+  - No crawling
+  - No tamper scripts
+  - Single endpoint only
+
+GLOBAL LIMITS:
+
+- Do not exceed 5 CLI commands per container
+- Use timeout flags for every command
+- Skip heavy scanning
+- No recursive scanning
+- No full port scans
+- No large wordlists
+- No DoS-like behavior
+
 Focus ONLY on:
 
 - Open ports
@@ -473,6 +510,8 @@ Focus ONLY on:
 - Unauthenticated access
 - Default credentials in environment variables
 - Sensitive config exposure
+- Confirmed weak authentication
+- Confirmed injection exposure
 
 ============================================================
 ATTACK SCENARIO DOCUMENTATION RULES
