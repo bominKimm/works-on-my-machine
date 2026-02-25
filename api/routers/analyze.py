@@ -6,7 +6,7 @@ import uuid
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 
 from agents.mock_agents import mock_policy_agent
-from agents.agent import LocalAttackAgent  # LocalAttackAgent를 RedTeam Agent로 사용
+from agents.new_agent_wrapper_v2 import analyze_bicep  # V2: stdout에서 JSON 추출
 from api.models.response import (
     AnalyzeResponse,
     AttackScenarioItem,
@@ -15,14 +15,14 @@ from api.models.response import (
     StepStatus,
     VulnerabilityItem,
 )
-from mock_services.bicep_transformer import mock_bicep_transform
-from mock_services.file_processor import mock_file_preprocessing
+from api.common.mock_services.bicep_transformer import mock_bicep_transform
+from api.common.mock_services.file_processor import mock_file_preprocessing
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
-ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg"}
+ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".bicep"}  # Bicep 추가
 MAX_FILE_SIZE = 20 * 1024 * 1024  # 20MB
 
 
@@ -40,23 +40,48 @@ def _validate_file(filename: str, size: int) -> None:
         )
 
 
-async def _run_policy(bicep_code: str, skip: bool) -> tuple[PolicyResult | None, StepStatus]:
+async def _run_policy(
+    bicep_code: str, skip: bool
+) -> tuple[PolicyResult | None, StepStatus]:
     if skip:
-        return None, StepStatus(step="Policy 검증", status="completed", message="건너뜀")
+        return None, StepStatus(
+            step="Policy 검증", status="completed", message="건너뜀"
+        )
     raw = await mock_policy_agent(bicep_code)
-    return PolicyResult(**raw), StepStatus(step="Policy 검증", status="completed", message=raw["summary"])
+    return PolicyResult(**raw), StepStatus(
+        step="Policy 검증", status="completed", message=raw["summary"]
+    )
 
 
-async def _run_redteam(bicep_code: str):
-    agent = LocalAttackAgent()  # LocalAttackAgent를 RedTeam Agent로 사용
-    result = await agent.analyze(bicep_code)
-    return result, StepStatus(step="RedTeam 분석", status="completed", message=f"취약점 {len(result.vulnerabilities)}개")
+async def _run_redteam(bicep_code: str, agent_mode: str = "with-tools"):
+    """
+    Agent를 사용하여 Red Team 분석 수행
+
+    Args:
+        bicep_code: Bicep 코드
+        agent_mode: "zero-tools" (느림, 창의적) 또는 "with-tools" (빠름, 일관적)
+    """
+    logger.info(f"🤖 Starting Agent (mode: {agent_mode})")
+    result = await analyze_bicep(bicep_code, agent_mode=agent_mode)
+
+    vuln_count = len(result.vulnerabilities)
+    attack_count = len(result.attack_scenarios)
+    logger.info(
+        f"✅ Analysis complete: {vuln_count} vulnerabilities, {attack_count} attack scenarios"
+    )
+
+    return result, StepStatus(
+        step="RedTeam 분석",
+        status="completed",
+        message=f"취약점 {vuln_count}개, 공격 시나리오 {attack_count}개 ({agent_mode})",
+    )
 
 
 @router.post("/analyze", response_model=AnalyzeResponse)
 async def analyze_architecture(
     file: UploadFile = File(...),
     skip_policy: bool = Form(default=False),
+    agent_mode: str = Form(default="with-tools"),
 ):
     """
     아키텍처 파일을 분석합니다.
@@ -65,6 +90,13 @@ async def analyze_architecture(
     1. 파일 검증
     2. 파일 전처리 (Mock) → BiCep 변환 (Mock)
     3. Policy 검증 & RedTeam 분석 (병렬)
+
+    Args:
+        file: 아키텍처 파일 (PDF/PNG/JPG)
+        skip_policy: Policy 검증 건너뛰기
+        agent_mode: Agent 실행 모드
+            - "with-tools": 빠른 분석 (10-30초, 권장)
+            - "zero-tools": 자율 분석 (3-5분, 창의적)
     """
     task_id = uuid.uuid4().hex[:12]
     steps: list[StepStatus] = []
@@ -73,19 +105,31 @@ async def analyze_architecture(
         # --- Step 1: 파일 검증 ---
         content = await file.read()
         _validate_file(file.filename, len(content))
-        steps.append(StepStatus(step="파일 업로드", status="completed", message=f"{file.filename} ({len(content)} bytes)"))
+        steps.append(
+            StepStatus(
+                step="파일 업로드",
+                status="completed",
+                message=f"{file.filename} ({len(content)} bytes)",
+            )
+        )
 
         # --- Step 2: 전처리 + BiCep 변환 (순차) ---
         await mock_file_preprocessing(content, file.filename)
         steps.append(StepStatus(step="파일 전처리", status="completed"))
 
         bicep_code = await mock_bicep_transform(content, file.filename)
-        steps.append(StepStatus(step="BiCep 변환", status="completed", message=f"{len(bicep_code)} chars"))
+        steps.append(
+            StepStatus(
+                step="BiCep 변환",
+                status="completed",
+                message=f"{len(bicep_code)} chars",
+            )
+        )
 
         # --- Step 3+4: Policy 검증 & RedTeam 분석 (병렬) ---
         (policy_result, policy_step), (result, redteam_step) = await asyncio.gather(
             _run_policy(bicep_code, skip_policy),
-            _run_redteam(bicep_code),
+            _run_redteam(bicep_code, agent_mode),
         )
         steps.append(policy_step)
         steps.append(redteam_step)
@@ -127,11 +171,13 @@ async def analyze_architecture(
         # --- Step 5: 결과 종합 ---
         vuln_count = len(result.vulnerabilities)
         attack_count = len(result.attack_scenarios)
-        steps.append(StepStatus(
-            step="결과 종합",
-            status="completed",
-            message=f"취약점 {vuln_count}개 · 공격 {attack_count}개",
-        ))
+        steps.append(
+            StepStatus(
+                step="결과 종합",
+                status="completed",
+                message=f"취약점 {vuln_count}개 · 공격 {attack_count}개",
+            )
+        )
 
         return AnalyzeResponse(
             status="success",

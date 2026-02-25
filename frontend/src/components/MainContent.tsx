@@ -2,30 +2,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAppStore } from '@/store/app';
 import { UploadCard } from './UploadCard';
 import { PipelineBar } from './PipelineBar';
-import { ResultGrid } from './ResultGrid';
 import { ResultSummary } from './ResultSummary';
 import { ResultTabs } from './ResultTabs';
 import { ChatPanel } from './ChatPanel';
-import { DetailModal } from './DetailModal';
 import { MessageCircle } from 'lucide-react';
 import { analyzeFile } from '@/services/api';
-import { useState } from 'react';
-
-type CardType = 'vulnerabilities' | 'attacks' | 'policy' | 'report' | null;
 
 export function MainContent() {
-  const { 
-    analysisState, 
-    uploadedFile, 
-    skipPolicy, 
-    isChatOpen, 
+  const {
+    analysisState,
+    uploadedFile,
+    skipPolicy,
+    isChatOpen,
     toggleChat,
     setAnalysisState,
     setAnalysisResult,
     setError,
   } = useAppStore();
-
-  const [selectedCard, setSelectedCard] = useState<CardType>(null);
 
   const handleAnalyze = async () => {
     if (!uploadedFile) return;
@@ -35,7 +28,7 @@ export function MainContent() {
 
     try {
       const result = await analyzeFile(uploadedFile, skipPolicy);
-      
+
       if (result.status === 'success') {
         setAnalysisResult(result);
         setAnalysisState('completed');
@@ -49,12 +42,6 @@ export function MainContent() {
       setAnalysisState('error');
     }
   };
-
-  // Trigger analysis when file uploaded and state is ready
-  if (uploadedFile && analysisState === 'idle') {
-    // This would normally be triggered by button click, but for demo we auto-start
-    // handleAnalyze();
-  }
 
   const showResults = analysisState === 'completed';
 
@@ -88,11 +75,7 @@ export function MainContent() {
               className="flex-1 flex flex-col items-center gap-8"
             >
               <ResultSummary />
-              {isChatOpen ? (
-                <ResultTabs />
-              ) : (
-                <ResultGrid />
-              )}
+              <ResultTabs />
             </motion.div>
           )}
         </AnimatePresence>
@@ -107,6 +90,29 @@ export function MainContent() {
         {/* Center - Upload/Progress when not completed */}
         {!showResults && (
           <div className="flex-1 flex flex-col items-center gap-8">
+            {/* Project Description */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center max-w-2xl"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                설계 단계 보안 위험 분석
+              </h2>
+              <p className="text-gray-500 leading-relaxed">
+                목업 컨테이너 환경을 구성하고, 설계 단계에서<br />
+                공격 가능성을 식별해 검증 우선순위를 제시합니다.
+              </p>
+              <p className="text-xs text-gray-400 mt-2">
+                실제 침투 테스트를 대체하는 도구가 아닙니다. 배포 전 설계 리스크를 조기에 발견하고, 보안 검토 우선순위를 정하는 데 활용하세요.
+              </p>
+              <div className="flex justify-center gap-6 mt-4 text-sm text-gray-400">
+                <span>🔍 설계 취약점 탐지</span>
+                <span>⚡ 공격 시나리오 식별</span>
+                <span>📋 검증 우선순위 리포트</span>
+              </div>
+            </motion.div>
+
             <UploadCard onStartAnalysis={handleAnalyze} />
 
             {/* Analysis Progress */}
@@ -162,14 +168,6 @@ export function MainContent() {
           </motion.button>
         )}
       </AnimatePresence>
-      {/* Detail Modal - only used when chat is closed */}
-      {!isChatOpen && (
-        <DetailModal
-          type={selectedCard}
-          open={selectedCard !== null}
-          onClose={() => setSelectedCard(null)}
-        />
-      )}
     </div>
   );
 }

@@ -49,8 +49,8 @@ sequenceDiagram
 | 단계 | 파일 | 함수/클래스 | 설명 |
 |------|------|-------------|------|
 | 1 | `api/routers/analyze.py` | `analyze_architecture()` | 진입점 - 파일 검증 |
-| 2 | `mock_services/file_processor.py` | `mock_file_preprocessing()` | Mock - 샘플 BiCep 반환 |
-| 3 | `mock_services/bicep_transformer.py` | `mock_bicep_transform()` | Mock - 샘플 BiCep 반환 |
+| 2 | `api/common/mock_services/file_processor.py` | `mock_file_preprocessing()` | Mock - 샘플 BiCep 반환 |
+| 3 | `api/common/mock_services/bicep_transformer.py` | `mock_bicep_transform()` | Mock - 샘플 BiCep 반환 |
 | 4 | `agents/mock_agents.py` | `mock_policy_agent()` | Mock - 패턴 기반 정책 검증 |
 | 5 | `agents/redteam_agent.py` | `RedTeamAgent.analyze()` | Mock - 정규식 기반 취약점 탐지 |
 

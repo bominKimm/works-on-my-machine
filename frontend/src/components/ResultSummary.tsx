@@ -45,12 +45,12 @@ export function ResultSummary() {
       textColor: 'text-blue-600',
     },
     {
-      label: 'Attacks',
-      value: security.attack_scenarios.length,
-      icon: '⚡',
+      label: 'Low',
+      value: summary.Low || 0,
+      icon: '🟢',
       bgColor: 'bg-white',
       borderColor: 'border-gray-200',
-      textColor: 'text-amber-600',
+      textColor: 'text-green-600',
     },
   ];
 

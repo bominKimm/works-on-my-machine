@@ -2,7 +2,11 @@ import asyncio
 from pathlib import Path
 
 
-SAMPLE_BICEP_PATH = Path(__file__).parent.parent / "samples" / "sample_bicep.bicep"
+SAMPLE_BICEP_PATH = (
+    Path(__file__).parent.parent
+    / "samples"
+    / "bicep_sample_07_web_storage_compliant.bicep"
+)
 
 
 async def mock_bicep_transform(file_content: bytes, filename: str) -> str:
