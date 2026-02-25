@@ -1,0 +1,44 @@
+# 6. 개발 설계 보안성 검토
+
+문서: 설계 보안성 검토 - SQL·Key Vault·VM·API
+용도: Bicep/인프라 설계 검토 시 RAG 참조
+
+## SQL·데이터베이스
+
+### 방화벽 규칙 금지 사항
+
+SQL Server 방화벽 규칙에서 startIpAddress '0.0.0.0'과 endIpAddress '255.255.255.255'로 전체 인터넷을 허용하는 구성은 금지이다. 허용 IP는 사전 승인된 관리 구간·애플리케이션 서버 대역만 지정한다.
+
+### 암호화 및 감사
+
+민감 데이터를 다루는 SQL DB는 TDE(Transparent Data Encryption) 활성화를 권장하며, 감사(Auditing) 설정을 통해 접근·변경 이력을 남긴다. Azure AD 인증 사용을 권장한다.
+
+## Key Vault
+
+### 소프트 삭제 및 퍼지 보호
+
+Key Vault는 enableSoftDelete를 true로, enablePurgeProtection를 true로 설정한다. 삭제 후 복구 가능 기간을 두고 퍼지 방지로 실수·악의적 삭제를 막는다.
+
+### 네트워크 제한
+
+Key Vault의 networkAcls defaultAction은 Allow가 아닌 Deny를 원칙으로 하고, 허용된 VNet/서브넷 또는 IP만 bypass로 추가한다. 모든 네트워크에서 접근 허용(defaultAction: 'Allow')은 위반이다.
+
+## 가상 머신·컴퓨팅
+
+### 디스크 암호화
+
+운영 VM의 OS 디스크 및 데이터 디스크는 암호화를 적용한다. Azure Disk Encryption 또는 플랫폼 관리 암호화를 사용하고, 설계도에 암호화 미적용은 검토 시 위반으로 지적한다.
+
+### 인증 방식
+
+Linux VM은 비밀번호 인증보다 SSH 공개키 인증을 우선 적용한다. RDP/SSH를 0.0.0.0/0에 열어두는 설계는 금지이다.
+
+## API·서버 접근
+
+### 인증 및 최소 권한
+
+API 및 내부 서버 접근은 인증(토큰, 인증서, Azure AD 등) 후에만 허용한다. 리소스별 최소 권한을 부여하고, 비율 제한(Rate Limit)을 적용한다. 하드코딩된 API 키·비밀번호는 금지이다.
+
+### 설정·시크릿 관리
+
+DB 연결 문자열, API 키, 비밀번호는 코드·Bicep에 평문으로 넣지 않고 Key Vault 또는 파이프라인 시크릿에서 주입한다. Bicep에서는 @secure() 파라미터 사용을 권장한다.

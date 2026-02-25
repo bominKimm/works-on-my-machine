@@ -1,0 +1,290 @@
+{
+  "version": "1.0",
+  "documents": [
+    {
+      "id": "FILE-SEC-2025-001-V1",
+      "path": "documents/CAT-001/POST-SEC-2025-001/FILE-SEC-2025-001-V1.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-001",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-002-V1",
+      "path": "documents/CAT-001/POST-SEC-2025-002/FILE-SEC-2025-002-V1.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-001",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-003-V1",
+      "path": "documents/CAT-001/POST-SEC-2025-003/FILE-SEC-2025-003-V1.txt",
+      "metadata": {
+        "status": "deprecated",
+        "collection": "CAT-001",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-004-V2",
+      "path": "documents/CAT-001/POST-SEC-2025-003/FILE-SEC-2025-004-V2.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-001",
+        "version": "v2.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-005-V1",
+      "path": "documents/CAT-002/POST-SEC-2025-004/FILE-SEC-2025-005-V1.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-002",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-006-V1",
+      "path": "documents/CAT-002/POST-SEC-2025-005/FILE-SEC-2025-006-V1.txt",
+      "metadata": {
+        "status": "deprecated",
+        "collection": "CAT-002",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-007-V2",
+      "path": "documents/CAT-002/POST-SEC-2025-005/FILE-SEC-2025-007-V2.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-002",
+        "version": "v2.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-008-V1",
+      "path": "documents/CAT-002/POST-SEC-2025-006/FILE-SEC-2025-008-V1.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-002",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-009-V1",
+      "path": "documents/CAT-003/POST-SEC-2025-007/FILE-SEC-2025-009-V1.txt",
+      "metadata": {
+        "status": "deprecated",
+        "collection": "CAT-003",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-010-V2",
+      "path": "documents/CAT-003/POST-SEC-2025-007/FILE-SEC-2025-010-V2.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-003",
+        "version": "v2.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-011-V1",
+      "path": "documents/CAT-003/POST-SEC-2025-008/FILE-SEC-2025-011-V1.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-003",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-012-V1",
+      "path": "documents/CAT-003/POST-SEC-2025-009/FILE-SEC-2025-012-V1.txt",
+      "metadata": {
+        "status": "deprecated",
+        "collection": "CAT-003",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-013-V2",
+      "path": "documents/CAT-003/POST-SEC-2025-009/FILE-SEC-2025-013-V2.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-003",
+        "version": "v2.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-014-V1",
+      "path": "documents/CAT-004/POST-SEC-2025-010/FILE-SEC-2025-014-V1.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-004",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-015-V1",
+      "path": "documents/CAT-004/POST-SEC-2025-011/FILE-SEC-2025-015-V1.txt",
+      "metadata": {
+        "status": "deprecated",
+        "collection": "CAT-004",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-016-V2",
+      "path": "documents/CAT-004/POST-SEC-2025-011/FILE-SEC-2025-016-V2.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-004",
+        "version": "v2.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-017-V1",
+      "path": "documents/CAT-004/POST-SEC-2025-012/FILE-SEC-2025-017-V1.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-004",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-018-V1",
+      "path": "documents/CAT-005/POST-SEC-2025-013/FILE-SEC-2025-018-V1.txt",
+      "metadata": {
+        "status": "deprecated",
+        "collection": "CAT-005",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-019-V2",
+      "path": "documents/CAT-005/POST-SEC-2025-013/FILE-SEC-2025-019-V2.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-005",
+        "version": "v2.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-020-V1",
+      "path": "documents/CAT-005/POST-SEC-2025-014/FILE-SEC-2025-020-V1.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-005",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-021-V1",
+      "path": "documents/CAT-005/POST-SEC-2025-015/FILE-SEC-2025-021-V1.txt",
+      "metadata": {
+        "status": "deprecated",
+        "collection": "CAT-005",
+        "version": "v1.0"
+      }
+    },
+    {
+      "id": "FILE-SEC-2025-022-V2",
+      "path": "documents/CAT-005/POST-SEC-2025-015/FILE-SEC-2025-022-V2.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-005",
+        "version": "v2.0"
+      }
+    },
+    {
+      "id": "DESIGN-REVIEW-001-NSG-NETWORK",
+      "path": "documents/CAT-006/DESIGN-REVIEW-001-NSG-NETWORK.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-006",
+        "version": "1.0"
+      }
+    },
+    {
+      "id": "DESIGN-REVIEW-002-STORAGE-WEBAPP",
+      "path": "documents/CAT-006/DESIGN-REVIEW-002-STORAGE-WEBAPP.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-006",
+        "version": "1.0"
+      }
+    },
+    {
+      "id": "DESIGN-REVIEW-003-SQL-KV-VM-API",
+      "path": "documents/CAT-006/DESIGN-REVIEW-003-SQL-KV-VM-API.txt",
+      "metadata": {
+        "status": "active",
+        "collection": "CAT-006",
+        "version": "1.0"
+      }
+    },
+    {
+      "id": "DESIGN-REVIEW-004-NAMING-TAGGING",
+      "path": "documents/CAT-006/DESIGN-REVIEW-004-NAMING-TAGGING.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-005-RBAC-MANAGEMENT",
+      "path": "documents/CAT-006/DESIGN-REVIEW-005-RBAC-MANAGEMENT.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-006-BACKUP-DR",
+      "path": "documents/CAT-006/DESIGN-REVIEW-006-BACKUP-DR.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-007-LOGGING-MONITORING",
+      "path": "documents/CAT-006/DESIGN-REVIEW-007-LOGGING-MONITORING.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-008-ENV-SEGREGATION",
+      "path": "documents/CAT-006/DESIGN-REVIEW-008-ENV-SEGREGATION.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-009-PRIVATE-ENDPOINT-WAF",
+      "path": "documents/CAT-006/DESIGN-REVIEW-009-PRIVATE-ENDPOINT-WAF.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-010-SECRETS-ROTATION",
+      "path": "documents/CAT-006/DESIGN-REVIEW-010-SECRETS-ROTATION.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-011-VNET-SERVICE-ENDPOINT",
+      "path": "documents/CAT-006/DESIGN-REVIEW-011-VNET-SERVICE-ENDPOINT.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-012-CICD-PIPELINE",
+      "path": "documents/CAT-006/DESIGN-REVIEW-012-CICD-PIPELINE.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-013-DATA-CLASSIFICATION",
+      "path": "documents/CAT-006/DESIGN-REVIEW-013-DATA-CLASSIFICATION.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-014-APP-SERVICE-FUNCTION",
+      "path": "documents/CAT-006/DESIGN-REVIEW-014-APP-SERVICE-FUNCTION.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    },
+    {
+      "id": "DESIGN-REVIEW-015-AUDIT-COMPLIANCE",
+      "path": "documents/CAT-006/DESIGN-REVIEW-015-AUDIT-COMPLIANCE.txt",
+      "metadata": { "status": "active", "collection": "CAT-006", "version": "1.0" }
+    }
+  ]
+}

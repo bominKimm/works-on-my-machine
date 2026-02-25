@@ -1,0 +1,167 @@
+[
+  {
+    "post_id": "POST-SEC-2025-001",
+    "category_id": "CAT-001",
+    "doc_type": "정책",
+    "title": "[정책] 정보보호 기본방침/개정/(2025.05.11)공지",
+    "author_name": "남현서",
+    "view_count": 151,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "정보보호_기본방침"
+  },
+  {
+    "post_id": "POST-SEC-2025-002",
+    "category_id": "CAT-001",
+    "doc_type": "매뉴얼",
+    "title": "[매뉴얼] 암호화 적용 가이드/개정/(2025.05.12)공지",
+    "author_name": "김소영",
+    "view_count": 601,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "암호화_적용_가이드"
+  },
+  {
+    "post_id": "POST-SEC-2025-003",
+    "category_id": "CAT-001",
+    "doc_type": "정책",
+    "title": "[정책] 정보보호 기본방침/개정/(2025.05.13)공지",
+    "author_name": "김남우",
+    "view_count": 385,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "정보보호_기본방침"
+  },
+  {
+    "post_id": "POST-SEC-2025-004",
+    "category_id": "CAT-002",
+    "doc_type": "매뉴얼",
+    "title": "[매뉴얼] 개발/서비스구축 개발보안/개정/(2025.05.14)공지",
+    "author_name": "남현서",
+    "view_count": 1485,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "서비스구축_개발보안"
+  },
+  {
+    "post_id": "POST-SEC-2025-005",
+    "category_id": "CAT-002",
+    "doc_type": "가이드",
+    "title": "[가이드] API 보안 설계/개정/(2025.05.15)공지",
+    "author_name": "김보민",
+    "view_count": 278,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "API_보안_설계"
+  },
+  {
+    "post_id": "POST-SEC-2025-006",
+    "category_id": "CAT-002",
+    "doc_type": "매뉴얼",
+    "title": "[매뉴얼] 개발/서비스구축 개발보안/개정/(2025.05.16)공지",
+    "author_name": "김보민",
+    "view_count": 964,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "서비스구축_개발보안"
+  },
+  {
+    "post_id": "POST-SEC-2025-007",
+    "category_id": "CAT-003",
+    "doc_type": "매뉴얼",
+    "title": "[매뉴얼] 하이브리드 클라우드 네트워크/개정/(2025.05.17)공지",
+    "author_name": "남현서",
+    "view_count": 161,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "하이브리드클라우드_네트워크"
+  },
+  {
+    "post_id": "POST-SEC-2025-008",
+    "category_id": "CAT-003",
+    "doc_type": "정책",
+    "title": "[정책] DMZ 및 단일 회선 금지/개정/(2025.05.18)공지",
+    "author_name": "남현서",
+    "view_count": 547,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "DMZ_단일회선_정책"
+  },
+  {
+    "post_id": "POST-SEC-2025-009",
+    "category_id": "CAT-003",
+    "doc_type": "매뉴얼",
+    "title": "[매뉴얼] 하이브리드 클라우드 네트워크/개정/(2025.05.19)공지",
+    "author_name": "김남우",
+    "view_count": 1134,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "하이브리드클라우드_네트워크"
+  },
+  {
+    "post_id": "POST-SEC-2025-010",
+    "category_id": "CAT-004",
+    "doc_type": "매뉴얼",
+    "title": "[매뉴얼] 개발환경 보안/개정/(2025.05.20)공지",
+    "author_name": "김보민",
+    "view_count": 154,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "개발환경_보안"
+  },
+  {
+    "post_id": "POST-SEC-2025-011",
+    "category_id": "CAT-004",
+    "doc_type": "가이드",
+    "title": "[가이드] Proxy 및 환경변수/개정/(2025.05.21)공지",
+    "author_name": "김보민",
+    "view_count": 507,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "Proxy_환경변수_가이드"
+  },
+  {
+    "post_id": "POST-SEC-2025-012",
+    "category_id": "CAT-004",
+    "doc_type": "매뉴얼",
+    "title": "[매뉴얼] 개발환경 보안/개정/(2025.05.22)공지",
+    "author_name": "김보민",
+    "view_count": 959,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "개발환경_보안"
+  },
+  {
+    "post_id": "POST-SEC-2025-013",
+    "category_id": "CAT-005",
+    "doc_type": "정책",
+    "title": "[정책] 민감 데이터 반출/개정/(2025.05.23)공지",
+    "author_name": "김남우",
+    "view_count": 1019,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "민감데이터_반출"
+  },
+  {
+    "post_id": "POST-SEC-2025-014",
+    "category_id": "CAT-005",
+    "doc_type": "매뉴얼",
+    "title": "[매뉴얼] K-익명성 및 합성데이터/개정/(2025.05.24)공지",
+    "author_name": "김보민",
+    "view_count": 669,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "K익명성_합성데이터"
+  },
+  {
+    "post_id": "POST-SEC-2025-015",
+    "category_id": "CAT-005",
+    "doc_type": "정책",
+    "title": "[정책] 민감 데이터 반출/개정/(2025.05.25)공지",
+    "author_name": "남현서",
+    "view_count": 426,
+    "created_at": "2025-05-12T09:00:00Z",
+    "updated_at": "2025-05-12T09:00:00Z",
+    "file_prefix": "민감데이터_반출"
+  }
+]

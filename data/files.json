@@ -1,0 +1,178 @@
+[
+  {
+    "file_id": "FILE-SEC-2025-001-V1",
+    "post_id": "POST-SEC-2025-001",
+    "file_name": "정보보호_기본방침_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-002-V1",
+    "post_id": "POST-SEC-2025-002",
+    "file_name": "암호화_적용_가이드_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-003-V1",
+    "post_id": "POST-SEC-2025-003",
+    "file_name": "정보보호_기본방침_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "deprecated",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-004-V2",
+    "post_id": "POST-SEC-2025-003",
+    "file_name": "정보보호_기본방침_v2.0.pdf",
+    "version_tag": "v2.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-005-V1",
+    "post_id": "POST-SEC-2025-004",
+    "file_name": "서비스구축_개발보안_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-006-V1",
+    "post_id": "POST-SEC-2025-005",
+    "file_name": "API_보안_설계_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "deprecated",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-007-V2",
+    "post_id": "POST-SEC-2025-005",
+    "file_name": "API_보안_설계_v2.0.pdf",
+    "version_tag": "v2.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-008-V1",
+    "post_id": "POST-SEC-2025-006",
+    "file_name": "서비스구축_개발보안_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-009-V1",
+    "post_id": "POST-SEC-2025-007",
+    "file_name": "하이브리드클라우드_네트워크_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "deprecated",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-010-V2",
+    "post_id": "POST-SEC-2025-007",
+    "file_name": "하이브리드클라우드_네트워크_v2.0.pdf",
+    "version_tag": "v2.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-011-V1",
+    "post_id": "POST-SEC-2025-008",
+    "file_name": "DMZ_단일회선_정책_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-012-V1",
+    "post_id": "POST-SEC-2025-009",
+    "file_name": "하이브리드클라우드_네트워크_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "deprecated",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-013-V2",
+    "post_id": "POST-SEC-2025-009",
+    "file_name": "하이브리드클라우드_네트워크_v2.0.pdf",
+    "version_tag": "v2.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-014-V1",
+    "post_id": "POST-SEC-2025-010",
+    "file_name": "개발환경_보안_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-015-V1",
+    "post_id": "POST-SEC-2025-011",
+    "file_name": "Proxy_환경변수_가이드_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "deprecated",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-016-V2",
+    "post_id": "POST-SEC-2025-011",
+    "file_name": "Proxy_환경변수_가이드_v2.0.pdf",
+    "version_tag": "v2.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-017-V1",
+    "post_id": "POST-SEC-2025-012",
+    "file_name": "개발환경_보안_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-018-V1",
+    "post_id": "POST-SEC-2025-013",
+    "file_name": "민감데이터_반출_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "deprecated",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-019-V2",
+    "post_id": "POST-SEC-2025-013",
+    "file_name": "민감데이터_반출_v2.0.pdf",
+    "version_tag": "v2.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-020-V1",
+    "post_id": "POST-SEC-2025-014",
+    "file_name": "K익명성_합성데이터_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-021-V1",
+    "post_id": "POST-SEC-2025-015",
+    "file_name": "민감데이터_반출_v1.0.pdf",
+    "version_tag": "v1.0",
+    "status": "deprecated",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  },
+  {
+    "file_id": "FILE-SEC-2025-022-V2",
+    "post_id": "POST-SEC-2025-015",
+    "file_name": "민감데이터_반출_v2.0.pdf",
+    "version_tag": "v2.0",
+    "status": "active",
+    "uploaded_at": "2025-05-12T09:00:00Z"
+  }
+]
