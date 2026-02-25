@@ -90,23 +90,10 @@ def parse_json_to_analysis_result(json_data: dict, bicep_code: str) -> AnalysisR
         "total_attack_scenarios": len(attack_scenarios),
         "data_source": "JSON (parsed from agent stdout)",
     }
-    
-    # 간단한 리포트 생성
-    report = f"""# Security Analysis Report (from JSON)
 
-## Summary
-- Bicep Resources: {architecture_summary['bicep_resources']}
-- Vulnerabilities Found: {len(vulnerabilities)}
-- Attack Scenarios: {len(attack_scenarios)}
+    # Agent가 생성한 report 사용
+    report = json_data.get("report", "")
 
-## Vulnerabilities
-"""
-    for v in vulnerabilities:
-        report += f"\n### {v.title} ({v.severity})\n"
-        report += f"- **Category**: {v.category}\n"
-        report += f"- **Resource**: {v.affected_resource}\n"
-        report += f"- **Description**: {v.description}\n"
-    
     return AnalysisResult(
         architecture_summary=architecture_summary,
         vulnerabilities=vulnerabilities,
