@@ -824,7 +824,7 @@ Your final response MUST be ONLY a JSON object with this structure:
       "Medium": Z,
       "Low": W
   }},
-  "report": "Korean markdown summary (concise)"
+  "report": "# 🛡️ 보안 검증 및 설계 위험 분석 보고서..."
 }}
 
 Do NOT create any files.
