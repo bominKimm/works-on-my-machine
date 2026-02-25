@@ -30,6 +30,9 @@ jobs:
         working-directory: frontend
         run: npx vite build
 
+      - name: Create package.json for serve
+        run: echo '{"name":"workomm01","version":"1.0.0","scripts":{"start":"npx serve -s . -l 8080"},"dependencies":{"serve":"^14.2.1"}}' > frontend/dist/package.json
+
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v4
         with:
