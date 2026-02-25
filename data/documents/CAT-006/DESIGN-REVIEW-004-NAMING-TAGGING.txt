@@ -1,0 +1,18 @@
+# 6. 개발 설계 보안성 검토
+
+문서: 설계 보안성 검토 - 리소스 네이밍·태깅
+용도: Bicep/인프라 설계 검토 시 RAG 참조
+
+## 사내 리소스 네이밍 규칙
+
+### 필수 태그
+
+모든 프로덕션 리소스에는 다음 태그가 의무 적용된다. 설계 검토 시 미부여 시 위반으로 지적한다. Environment(dev/staging/prod), Owner(담당팀 또는 서비스명), CostCenter(내부 비용배분 코드), DataClassification(public/internal/confidential/restricted), SecurityReviewDate(최종 보안검토일 YYYY-MM-DD).
+
+### 네이밍 규칙
+
+리소스 이름은 {환경}-{서비스약어}-{리소스유형}-{순번} 형식을 따른다. 예: prod-order-api-func-01. 상용망(prod) 리소스에 dev/stg 접두어 사용 금지. 리소스 그룹은 rg-{환경}-{서비스}-{지역약어} 형식 권장.
+
+### 금지 문자열
+
+리소스명·설명에 test, sample, temp, admin, password, secret, internal-only 등 보안·운영 혼동을 일으킬 수 있는 문자열은 사용하지 않는다. 실제 프로덕션 리소스에 test 접두어 사용 시 설계 검토 반려 사유가 될 수 있다.

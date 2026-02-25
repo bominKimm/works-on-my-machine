@@ -1,0 +1,32 @@
+# 6. 개발 설계 보안성 검토
+
+문서: 설계 보안성 검토 - 스토리지·웹앱
+용도: Bicep/인프라 설계 검토 시 RAG 참조
+
+## 스토리지 계정
+
+### HTTPS 전용 의무
+
+스토리지 계정은 supportsHttpsTrafficOnly를 true로 설정해야 한다. HTTP 트래픽 허용(supportsHttpsTrafficOnly: false)은 전사 암호화 정책 위반이며, 설계 검토 시 위반으로 지적한다.
+
+### 최소 TLS 버전
+
+minimumTlsVersion은 TLS1_2 이상으로 설정한다. 전송 구간 암호화는 전사 정책에 따라 TLS 1.2 이상 의무 적용이다. 미설정 또는 TLS 1.0/1.1 허용은 위반이다.
+
+### Blob 공개 접근
+
+allowBlobPublicAccess는 보안 검토 없이 true로 두지 않는다. 기본값 false 또는 명시적 false를 권장하며, 공개 읽기가 필요한 경우 예외 승인 후 최소 범위로만 허용한다.
+
+## 웹 앱(App Service)
+
+### HTTPS 전용
+
+App Service(웹앱)는 httpsOnly: true를 설정해야 한다. HTTP 허용은 위반이다. siteConfig 내 minTlsVersion은 '1.2' 이상으로 설정한다.
+
+### FTP·FTPS 제한
+
+ftpsState는 AllAllowed가 아닌 Disabled 또는 FtpsOnly로 제한한다. 불필요한 FTP 허용은 보안 사고 벡터가 되므로 설계 검토 시 수정을 권고한다.
+
+### TLS 버전
+
+웹앱의 최소 TLS 버전은 1.2 이상이어야 한다. TLS 1.0/1.1은 사용 중단 정책에 따라 허용하지 않는다.
