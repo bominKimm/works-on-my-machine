@@ -4,7 +4,9 @@
 
 ### 실제 구현
 
-1. **User Interface (Streamlit)** - 전체 구현
+1. **User Interface**
+   - Streamlit - 로컬 데모용 임시 구현 (완료)
+   - React.js - 프로덕션용 프론트엔드 (개발 예정, `frontend/` 디렉토리)
 2. **RedTeam Agent** - 전체 구현
 3. **API Layer (FastAPI + Gunicorn)** - 전체 구현
 
@@ -55,11 +57,18 @@ flowchart TB
 
 ### 1. User Interface
 
-**기능 명세:**
+**현재 구현 (Streamlit - 로컬 데모용):**
 
-1. **파일 업로드** - 지원 포맷: PDF, PNG, JPG
-2. **파이프라인 시각화** - 파일 업로드 → 전처리 → BiCep 변환 → Policy 검증 → RedTeam 분석
-3. **결과 표시** - RedTeam 보고서 렌더링, 취약점 목록, 보안 권장사항
+- 파일 업로드 (PDF, PNG, JPG)
+- 5단계 파이프라인 시각화
+- 취약점 목록 및 보안 권장사항 표시
+- 마크다운 보고서 렌더링
+
+**향후 구현 (React.js - 프로덕션용):**
+
+- `frontend/` 디렉토리에 별도 프로젝트로 구현 예정
+- 기존 FastAPI 엔드포인트 (`/api/v1/*`) 사용
+- 상세 기술 스택 및 아키텍처는 [FRONTEND.md](FRONTEND.md) 참조 (예정)
 
 ### 2. RedTeam Agent
 

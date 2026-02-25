@@ -47,7 +47,9 @@ curl -X POST http://localhost:8000/api/v1/analyze \
 # Swagger UI → http://localhost:8000/docs
 ```
 
-### Streamlit UI
+### Streamlit UI (로컬 데모용)
+
+> **Note:** Streamlit UI는 로컬 데모 및 개발 테스트 목적의 임시 구현입니다. 프로덕션 환경에서는 `frontend/` 디렉토리의 React.js 기반 UI를 사용할 예정입니다.
 
 API 서버가 먼저 실행 중이어야 합니다.
 
@@ -63,6 +65,10 @@ streamlit run streamlit_app/app.py --server.port 8501
 - 공격 시뮬레이션 시나리오
 - Policy 검증 결과
 - 마크다운 보고서 렌더링 및 다운로드
+
+### React.js UI (프로덕션용, 개발 예정)
+
+`frontend/` 디렉토리에 별도 React.js 프로젝트로 구현될 예정입니다. 기존 FastAPI 엔드포인트를 사용하며, 상세 기술 스택 및 개발 가이드는 [FRONTEND.md](FRONTEND.md) 참조 (예정).
 
 ### Mock 서비스 단독 테스트
 
