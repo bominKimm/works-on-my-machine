@@ -2,30 +2,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAppStore } from '@/store/app';
 import { UploadCard } from './UploadCard';
 import { PipelineBar } from './PipelineBar';
-import { ResultGrid } from './ResultGrid';
 import { ResultSummary } from './ResultSummary';
 import { ResultTabs } from './ResultTabs';
 import { ChatPanel } from './ChatPanel';
-import { DetailModal } from './DetailModal';
 import { MessageCircle } from 'lucide-react';
 import { analyzeFile } from '@/services/api';
-import { useState } from 'react';
-
-type CardType = 'vulnerabilities' | 'attacks' | 'policy' | 'report' | null;
 
 export function MainContent() {
-  const { 
-    analysisState, 
-    uploadedFile, 
-    skipPolicy, 
-    isChatOpen, 
+  const {
+    analysisState,
+    uploadedFile,
+    skipPolicy,
+    isChatOpen,
     toggleChat,
     setAnalysisState,
     setAnalysisResult,
     setError,
   } = useAppStore();
-
-  const [selectedCard, setSelectedCard] = useState<CardType>(null);
 
   const handleAnalyze = async () => {
     if (!uploadedFile) return;
@@ -35,7 +28,7 @@ export function MainContent() {
 
     try {
       const result = await analyzeFile(uploadedFile, skipPolicy);
-      
+
       if (result.status === 'success') {
         setAnalysisResult(result);
         setAnalysisState('completed');
@@ -49,12 +42,6 @@ export function MainContent() {
       setAnalysisState('error');
     }
   };
-
-  // Trigger analysis when file uploaded and state is ready
-  if (uploadedFile && analysisState === 'idle') {
-    // This would normally be triggered by button click, but for demo we auto-start
-    // handleAnalyze();
-  }
 
   const showResults = analysisState === 'completed';
 
@@ -88,11 +75,7 @@ export function MainContent() {
               className="flex-1 flex flex-col items-center gap-8"
             >
               <ResultSummary />
-              {isChatOpen ? (
-                <ResultTabs />
-              ) : (
-                <ResultGrid />
-              )}
+              <ResultTabs />
             </motion.div>
           )}
         </AnimatePresence>
@@ -162,14 +145,6 @@ export function MainContent() {
           </motion.button>
         )}
       </AnimatePresence>
-      {/* Detail Modal - only used when chat is closed */}
-      {!isChatOpen && (
-        <DetailModal
-          type={selectedCard}
-          open={selectedCard !== null}
-          onClose={() => setSelectedCard(null)}
-        />
-      )}
     </div>
   );
 }
