@@ -16,7 +16,7 @@ async def mock_file_preprocessing(file_content: bytes, filename: str) -> str:
 
     현재는 파일 형식을 확인한 후 샘플 BiCep 코드를 반환합니다.
     """
-    allowed_extensions = {".pdf", ".png", ".jpg", ".jpeg"}
+    allowed_extensions = {".pdf", ".png", ".jpg", ".jpeg", ".bicep"}  # Bicep 추가
     ext = os.path.splitext(filename)[1].lower()
 
     if ext not in allowed_extensions:
@@ -24,6 +24,11 @@ async def mock_file_preprocessing(file_content: bytes, filename: str) -> str:
             f"지원하지 않는 파일 형식입니다: {ext}. "
             f"지원 형식: {', '.join(allowed_extensions)}"
         )
+    
+    # Bicep 파일인 경우 그대로 반환
+    if ext == ".bicep":
+        await asyncio.sleep(0.1)  # 간단한 검증 시뮬레이션
+        return file_content.decode('utf-8')
 
     # 실제 파싱 시뮬레이션을 위한 지연
     await asyncio.sleep(0.5)
