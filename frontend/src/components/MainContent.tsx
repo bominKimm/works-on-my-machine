@@ -90,6 +90,29 @@ export function MainContent() {
         {/* Center - Upload/Progress when not completed */}
         {!showResults && (
           <div className="flex-1 flex flex-col items-center gap-8">
+            {/* Project Description */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center max-w-2xl"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                설계 단계 보안 위험 분석
+              </h2>
+              <p className="text-gray-500 leading-relaxed">
+                목업 컨테이너 환경을 구성하고, 설계 단계에서<br />
+                공격 가능성을 식별해 검증 우선순위를 제시합니다.
+              </p>
+              <p className="text-xs text-gray-400 mt-2">
+                실제 침투 테스트를 대체하는 도구가 아닙니다. 배포 전 설계 리스크를 조기에 발견하고, 보안 검토 우선순위를 정하는 데 활용하세요.
+              </p>
+              <div className="flex justify-center gap-6 mt-4 text-sm text-gray-400">
+                <span>🔍 설계 취약점 탐지</span>
+                <span>⚡ 공격 시나리오 식별</span>
+                <span>📋 검증 우선순위 리포트</span>
+              </div>
+            </motion.div>
+
             <UploadCard onStartAnalysis={handleAnalyze} />
 
             {/* Analysis Progress */}
